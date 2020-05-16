@@ -36,7 +36,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="#">Features</a>
                 <a class="nav-item nav-link" href="#">Pricing</a>
             </div>
@@ -72,7 +71,7 @@
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary mx-auto" id="myBtn" form="numForm">테스트하기</button>
+            <button type="button" class="btn btn-primary mx-auto" id="myBtn" form="numForm"><div class=align-middle>테스트해보기</div></button>
         </form>
     </section>
 
@@ -84,8 +83,8 @@
             <div class="toast vanish box" role="alert" type="hidden" aria-live="assertive" aria-atomic="true">
                 <div class="toast-header">
                     <img src="img/nature.png" class="rounded mr-2" alt="nature.png">
-                    <strong class="mr-auto">Bootstrap</strong>
-                    <small>11 mins ago</small>
+                    <strong class="mr-auto">나의 결과</strong>
+                    <small>now</small>
                     <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -98,11 +97,20 @@
                     <span id="ball5" class="ball_645 lrg ball4"></span>
                     <span id="ball6" class="ball_645 lrg ball4"></span><br>
 
-                    <span id="span1"></span>
-                    <span id="message" class="h1"></span>
-                    <span id="span12"></span><br>
-                    <span id="span2"></span> <br>
+                    <div class="toast-text">
+                        <span id="span1"></span>
+                        <span id="message" class="h1"></span>
+                        <span id="span12"></span><br>
+                        <span id="span2"></span> <br>
+                    </div>
 
+                    <div id="area"></div>
+
+                    <p>1등 : 6개의 숫자 중 6개 모두 적중</p>
+                    <p>2등 : 6개의 숫자 중 5개 적중 + 보너스 숫자 적중</p>
+                    <p>3등 : 6개의 숫자 중 5개 적중</p>
+                    <p>4등 : 6개의 숫자 중 4개 적중</p>
+                    <p>5등 : 6개의 숫자 중 3개 적중</p>
                     <!-- Go to www.addthis.com/dashboard to customize your tools -->
                     <div class="addthis_inline_share_toolbox"></div>
                 </div>
@@ -149,13 +157,48 @@
                         message = 1;
                     } else if (max_num == 5) {
                         // bonus!
-                        message = 2;
+                        var bonus_round = round[max_num]; //회차
+                        var bonus_arr = lotto_number[bonus_round].split(" "); //회차의 배열
+                        var bonus_num = bonus_arr[bonus_arr.length - 1];
+                        bonus_arr.pop();
+                        for (var r = 0; r < 6; r++) {
+                            if ($.inArray(input_number[r], bonus_arr) == -1) {
+                                if (input_number[r] == bonus_num) message = 2;
+                                else message = 3;
+                            }
+                        }
+                    } else if (max_num == 4) {
+                        message = 4;
+                    } else if (max_num == 3) {
+                        message = 5;
                     }
 
                     $("#span1").text("당신의 번호는 ").show();
                     $("#message").text(message + "등").show();
                     $("#span12").text("에 당첨된 적이 있어요!").show();
-                    $("#span2").text(round[key[2]]).show();
+                    $("#span2").text(key).show();
+
+                    function main(a1, a2) {
+                        var tag = "<table class='table table-bordered'>";
+                        var b1 = parseInt(a1);
+                        tag += "<tr>";
+                        tag += "<td>등수</td>";
+                        tag += "<td>회차</td>";
+                        tag += "<td>당첨번호</td>";
+                        tag += "<td>보너스번호</td>";
+                        tag += "</tr>";
+                        for (j = 1; j <= b1; j++) {
+                            tag += "<tr>";
+                            tag += "<td>" + message + "</td>";
+                            tag += "<td>" + bonus_round + "</td>";
+                            tag += "<td>" + message + "</td>";
+                            tag += "<td>" + bonus_num + "</td>";
+                            tag += "</tr>";
+                        }
+                        tag += "</table>";
+                        area.innerHTML = tag;
+                    }
+                    main(1, 4);
                 }
 
                 $('.toast').toast({

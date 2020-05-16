@@ -1,16 +1,36 @@
+@font-face {
+    font-family: "Recipekorea";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+p {
+    color: #6c757d;
+    font-size: 0.825rem;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse
+}
+
 .title {
-    font-family: 'Dosis', sans-serif;
+    font-family: "Recipekorea";
     line-height: 1.67;
     text-align: center;
     color: #007bff;
 }
 
-h1 {
+.h1 {
+    font-family: "Recipekorea";
     color: #007bff;
 }
 
 .subtitle {
-    font-family: 'Dosis', sans-serif;
+    font-family: "Recipekorea";
     line-height: 1.53;
     text-align: center;
     color: #35465d;
@@ -25,9 +45,9 @@ h1 {
 }
 
 .navbar {
-    font-family: 'Dosis', sans-serif;
+    font-family: "Recipekorea";
     font-size: 2rem;
-    padding: .1rem 1.5rem;
+    padding: 0.1rem 1.5rem;
 }
 
 .navbar-light .navbar-toggler {
@@ -43,17 +63,33 @@ h1 {
 }
 
 .section2 {
-    margin-top: 1%;
+    margin-top: 2%;
 }
 
 body {
-    font-family: 'Dosis', sans-serif;
+    font-family: "Recipekorea";
     font-size: 15px;
     text-align: center;
 }
 
-toast-body {
-    font-family: 'Dosis', sans-serif;
+.btn {
+    margin-top: 1%;
+}
+
+.toast {
+    font-size: 1.425rem;
+}
+
+.toast-body {
+    font-family: "Recipekorea";
+}
+
+.toast-text {
+    margin-top: 3%;
+}
+
+.addthis_inline_share_toolbox {
+    margin-top: 1%;
 }
 
 
@@ -72,7 +108,7 @@ toast-body {
 .ball_645.lrg {
     width: 60px;
     height: 60px;
-    line-height: 56px;
+    line-height: 66px;
     font-size: 28px;
 }
 
@@ -124,12 +160,24 @@ toast-body {
     .navbar-brand {
         font-size: 2rem;
     }
+    .toast {
+        font-size: 1.425rem;
+    }
 }
 
 
 /* On screens that are 600px or less, set the background color to olive */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
+    .ball_645.lrg {
+        width: 50px;
+        height: 50px;
+        line-height: 60px;
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 576px) {
     html {
         font-size: 10px;
     }
@@ -139,8 +187,8 @@ toast-body {
     .ball_645.lrg {
         width: 42px;
         height: 42px;
-        line-height: 42px;
-        font-size: 23px;
+        line-height: 47px;
+        font-size: 18px;
     }
     .ball_645.ball2 {
         margin-left: 10px;

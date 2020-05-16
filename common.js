@@ -67,6 +67,26 @@ function invalid(arr) {
     return a;
 }
 
+function main(a1, a2) {
+    var tag = "<table class='table table-bordered'>";
+    var b1 = parseInt(a1);
+    tag += "<tr>";
+    tag += "<td>등수</td>";
+    tag += "<td>회차</td>";
+    tag += "<td>당첨번호</td>";
+    tag += "<td>보너스번호</td>";
+    tag += "</tr>";
+    for (j = 1; j <= b1; j++) {
+        tag += "<tr>";
+        for (i = 1; i <= 4; i++) {
+            tag += "<td>" + j + "." + i + "</td>";
+        }
+        tag += "</tr>";
+    }
+    tag += "</table>";
+    area.innerHTML = tag;
+}
+
 var lotto_number = new Array(911);
 lotto_number[910] = "1 11 17 27 35 39 31";
 lotto_number[909] = "7 24 29 30 34 35 33";
