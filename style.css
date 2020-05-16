@@ -26,15 +26,24 @@ h1 {
 
 .navbar {
     font-family: 'Dosis', sans-serif;
-    font-size: 2.2rem;
+    font-size: 2rem;
+    padding: .1rem 1.5rem;
 }
 
 .navbar-light .navbar-toggler {
     border-color: #ffffff;
 }
 
+.navbar-brand {
+    font-size: 2rem;
+}
+
 .section {
-    margin-top: 20px;
+    margin-top: 6%;
+}
+
+.section2 {
+    margin-top: 1%;
 }
 
 body {
@@ -45,30 +54,6 @@ body {
 
 toast-body {
     font-family: 'Dosis', sans-serif;
-}
-
-
-/* On screens that are 992px or less, set the background color to blue */
-
-@media screen and (max-width: 992px) {
-    html {
-        font-size: 13px;
-    }
-    .navbar-brand {
-        font-size: 2rem;
-    }
-}
-
-
-/* On screens that are 600px or less, set the background color to olive */
-
-@media screen and (max-width: 600px) {
-    html {
-        font-size: 10px;
-    }
-    .navbar-brand {
-        font-size: 2rem;
-    }
 }
 
 
@@ -127,4 +112,43 @@ toast-body {
     background: #aaa;
     text-shadow: 0px 0px 3px rgba(61, 61, 61, 0.8);
     margin-left: 20px;
+}
+
+
+/* On screens that are 992px or less, set the background color to blue */
+
+@media screen and (max-width: 992px) {
+    html {
+        font-size: 13px;
+    }
+    .navbar-brand {
+        font-size: 2rem;
+    }
+}
+
+
+/* On screens that are 600px or less, set the background color to olive */
+
+@media screen and (max-width: 600px) {
+    html {
+        font-size: 10px;
+    }
+    .navbar-brand {
+        font-size: 2rem;
+    }
+    .ball_645.lrg {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 26px;
+    }
+    .ball_645.ball2 {
+        margin-left: 10px;
+    }
+    .ball_645.ball3 {
+        margin-left: 10px;
+    }
+    .ball_645.ball4 {
+        margin-left: 10px;
+    }
 }
