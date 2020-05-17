@@ -1,15 +1,24 @@
 function findnumber(innum) {
     var arr = []; //일치하는 수자 걔수
     var arr_var = []; //회차
-    for (var j = 1; j < 911; j++) {
+    for (var j = 1; j < 912; j++) {
         a = 0;
         var arr_name = lotto_number[j].split(" ");
         for (var i = 0; i < 6; i++) {
+            b = 0;
             for (var k = 0; k < 6; k++) {
                 if (innum[i] === arr_name[k]) {
                     a++;
+                    b = 1;
                 }
             }
+            if (b != 1) {
+                var findbonus = innum[i];
+            }
+        }
+        if (a == 5) {
+            if (findbonus == arr_name[6]) a = 5.1;
+
         }
         if (a > 2) {
             arr.push(a);
@@ -17,12 +26,11 @@ function findnumber(innum) {
         }
     }
     var set = Array.from(new Set(arr));
-    var round = new Object;
+    var round = new Object();
 
     for (var q = 0; q < set.length; q++) {
         var key = set[q];
         round[key] = [];
-
     }
 
     for (var m = 0; m < arr.length; m++) {
@@ -43,7 +51,7 @@ function invalid(arr) {
     }
     arr.sort(function(a, b) {
         return a - b;
-    })
+    });
     if (a != 1) {
         for (var i = 0; i < 5; i++) {
             for (var j = i + 1; j < 6; j++) {
@@ -67,27 +75,8 @@ function invalid(arr) {
     return a;
 }
 
-function main(a1, a2) {
-    var tag = "<table class='table table-bordered'>";
-    var b1 = parseInt(a1);
-    tag += "<tr>";
-    tag += "<td>등수</td>";
-    tag += "<td>회차</td>";
-    tag += "<td>당첨번호</td>";
-    tag += "<td>보너스번호</td>";
-    tag += "</tr>";
-    for (j = 1; j <= b1; j++) {
-        tag += "<tr>";
-        for (i = 1; i <= 4; i++) {
-            tag += "<td>" + j + "." + i + "</td>";
-        }
-        tag += "</tr>";
-    }
-    tag += "</table>";
-    area.innerHTML = tag;
-}
-
 var lotto_number = new Array(911);
+lotto_number[911] = "4 5 12 14 32 42 35";
 lotto_number[910] = "1 11 17 27 35 39 31";
 lotto_number[909] = "7 24 29 30 34 35 33";
 lotto_number[908] = "3 16 21 22 23 44 30";

@@ -104,13 +104,14 @@
                         <span id="span2"></span> <br>
                     </div>
 
-                    <div id="area"></div>
-
                     <p>1등 : 6개의 숫자 중 6개 모두 적중</p>
                     <p>2등 : 6개의 숫자 중 5개 적중 + 보너스 숫자 적중</p>
                     <p>3등 : 6개의 숫자 중 5개 적중</p>
                     <p>4등 : 6개의 숫자 중 4개 적중</p>
                     <p>5등 : 6개의 숫자 중 3개 적중</p>
+
+                    <div id="area"></div>
+
                     <!-- Go to www.addthis.com/dashboard to customize your tools -->
                     <div class="addthis_inline_share_toolbox"></div>
                 </div>
@@ -141,7 +142,7 @@
                 round = findnumber(input_number);
                 var key = Object.keys(round);
                 if (key == undefined) {
-                    $("#span1").text("there is no number like that").show;
+                    $("#span1").text("당신의 번호는 당첨된 적이 없어요..").show;
                 } else {
                     $("#ball1").text(input_number[0]).show();
                     $("#ball2").text(input_number[1]).show();
@@ -150,60 +151,79 @@
                     $("#ball5").text(input_number[4]).show();
                     $("#ball6").text(input_number[5]).show();
 
-                    var max_num = key[key.length - 1];
+                    var max_num = key[key.length - 1]; // key 마지막 값
                     var message;
-
-                    var bonus_round = round[max_num]; //회차
-                    bonus_round = bonus_round[0]; //임시방편!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                    var bonus_arr = lotto_number[bonus_round].split(" "); //회차의 배열
-                    var bonus_num = bonus_arr[bonus_arr.length - 1];
-                    bonus_arr.pop();
                     if (max_num == 6) {
                         message = 1;
+                    } else if (max_num == 5.1) {
+                        message = 2;
                     } else if (max_num == 5) {
-                        // bonus!
-
-                        for (var r = 0; r < 6; r++) {
-                            if ($.inArray(input_number[r], bonus_arr) == -1) {
-                                if (input_number[r] == bonus_num) message = 2;
-                                else message = 3;
-                            }
-                        }
+                        message = 3;
                     } else if (max_num == 4) {
                         message = 4;
                     } else if (max_num == 3) {
                         message = 5;
                     } else if (max_num == 2 || max_num == 1 || max_num == 0) {
-                        $("#span1").text("당신의 번호는 당첨된 적이 없어요!").show();
+                        $("#span1").text("당신의 번호는 당첨된 적이 없어요..").show();
                         return;
                     }
 
                     $("#span1").text("당신의 번호는 ").show();
                     $("#message").text(message + "등").show();
                     $("#span12").text("에 당첨된 적이 있어요!").show();
-                    $("#span2").text(key).show();
 
-                    function main(a1, a2) {
+                    var table_round;
+                    var table_bonus_num;
+                    var score, score_num;
+
+                    function main() {
                         var tag = "<table class='table table-bordered'>";
-                        var b1 = parseInt(a1);
                         tag += "<tr>";
                         tag += "<td>등수</td>";
                         tag += "<td>회차</td>";
                         tag += "<td>당첨번호</td>";
                         tag += "<td>보너스번호</td>";
                         tag += "</tr>";
-                        for (j = 1; j <= b1; j++) {
-                            tag += "<tr>";
-                            tag += "<td>" + message + "</td>";
-                            tag += "<td>" + bonus_round + "</td>";
-                            tag += "<td>" + bonus_arr + "</td>";
-                            tag += "<td>" + bonus_num + "</td>";
-                            tag += "</tr>";
+
+                        for (var j = key.length - 1; j >= 0; j--) {
+                            score = key[j];
+                            if (score == 6) {
+                                score_num = 1;
+                            } else if (score == 5.1) {
+                                score_num = 2;
+                            } else if (score == 5) {
+                                score_num = 3;
+                            } else if (score == 4) {
+                                score_num = 4;
+                            } else if (score == 3) {
+                                score_num = 5;
+                            }
+                            for (var k = 0; k < round[score].length; k++) {
+                                table_round = lotto_number[round[score][k]].split(" ");
+                                table_bonus_num = table_round[table_round.length - 1];
+                                table_round.slice(0, 6);
+                                tag += "<tr>";
+                                tag += "<td>" + score_num + "</td>";
+                                tag += "<td>" + round[score][k] + "</td>";
+                                tag += "<td>";
+                                for (var g = 0; g < 6; g++) {
+                                    if (input_number.includes(table_round[g]) == true) {
+                                        tag += "<span style='color:#22a5d6'>" + table_round[g] + "</span>";
+                                    } else tag += "<span>" + table_round[g] + "</span>";
+
+                                    if (g < 5) tag += ", ";
+                                }
+                                tag += "</td>";
+                                if (input_number.includes(table_bonus_num) == true) {
+                                    tag += "<td style='color:#22a5d6'>" + table_bonus_num + "</td>";
+                                } else tag += "<td>" + table_bonus_num + "</td>";
+                                tag += "</tr>";
+                            }
                         }
                         tag += "</table>";
                         area.innerHTML = tag;
                     }
-                    main(1, 4);
+                    main();
                 }
 
                 $('.toast').toast({
