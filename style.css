@@ -70,6 +70,7 @@ body {
     font-family: "Recipekorea";
     font-size: 15px;
     text-align: center;
+    margin-bottom: 3%;
 }
 
 .btn {
@@ -109,8 +110,9 @@ body {
 .ball_645.lrg {
     width: 60px;
     height: 60px;
-    line-height: 66px;
+    line-height: 70px;
     font-size: 28px;
+    padding-right: 0.2%;
 }
 
 .ball_645.sml {
@@ -164,6 +166,9 @@ body {
     .toast {
         font-size: 1.425rem;
     }
+    .title-table {
+        font-size: 1.025rem;
+    }
 }
 
 
@@ -199,5 +204,25 @@ body {
     }
     .ball_645.ball4 {
         margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .form-control {
+        padding-left: 0.2rem;
+        padding-right: 0.2rem;
+    }
+}
+
+@media screen and (max-width: 394px) {
+    .ball_645.lrg {
+        width: 38px;
+        height: 38px;
+        line-height: 43px;
+        font-size: 16px;
+        padding-left: 1px;
+    }
+    .toast {
+        font-size: 1.1rem;
     }
 }
