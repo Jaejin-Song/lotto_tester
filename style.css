@@ -10,6 +10,10 @@ p {
     font-size: 0.825rem;
 }
 
+#container-head {
+    margin-top: 11%;
+}
+
 table,
 th,
 td {
@@ -34,6 +38,8 @@ td {
     line-height: 1.53;
     text-align: center;
     color: #35465d;
+    font-size: 1.5rem;
+    margin-top: 5%;
 }
 
 .vanish {
@@ -48,6 +54,7 @@ td {
     font-family: "Recipekorea";
     font-size: 2rem;
     padding: 0.1rem 1.5rem;
+    margin-top: 1%;
 }
 
 .navbar-light .navbar-toggler {
