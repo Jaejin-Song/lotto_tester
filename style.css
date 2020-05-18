@@ -11,7 +11,7 @@ p {
 }
 
 #container-head {
-    margin-top: 16%;
+    margin-top: 13%;
 }
 
 table,
@@ -62,7 +62,12 @@ td {
 }
 
 .navbar-brand {
-    font-size: 2rem;
+    font-size: 2.3rem;
+}
+
+.navbar-nav {
+    padding-top: 1%;
+    font-size: 1.8rem;
 }
 
 .section {
@@ -218,6 +223,9 @@ body {
     .form-control {
         padding-left: 0.2rem;
         padding-right: 0.2rem;
+    }
+    #container-head {
+        margin-top: 60%;
     }
 }
 
