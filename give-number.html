@@ -40,46 +40,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="#">역대 당첨번호 조회</a>
-                <a class="nav-item nav-link" href="give-number.html">로또번호 추천</a>
+                <a class="nav-item nav-link" href="lotto-number.html">역대 당첨번호 조회</a>
+                <a class="nav-item nav-link" href="#">로또번호 추천</a>
             </div>
         </div>
     </nav>
 
-    <div class="container section2" id="area2"></div>
-
-    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <div class="addthis_inline_share_toolbox"></div>
-
-    <script>
-        $(document).ready(function() {
-            var tag = "<table class='table table-bordered'>";
-
-            tag += "<tr id='allnumtitle'>";
-            tag += "<td>회차</td>";
-            tag += "<td>당첨번호</td>";
-            tag += "<td>보너스번호</td>";
-            tag += "</tr>";
-
-            for (var j = 911; j > 0; j--) {
-                var round_num = lotto_number[j].split(" ");
-                tag += "<tr id='allnumlist'>";
-                tag += "<td>" + j + "</td>";
-                tag += "<td>";
-                for (var h = 0; h < 6; h++) {
-                    tag += "<span>" + round_num[h] + "</span>";
-
-                    if (h < 5) tag += ", ";
-                }
-                tag += "</td>";
-                tag += "<td>" + round_num[6] + "</td>";
-                tag += "</tr>";
-            }
-            tag += "</table>";
-            area2.innerHTML = tag;
-        });
-        mainfornumber();
-    </script>
+    <section class="container section" id="container-head">
+        <h1 class="title align-middle">로또 번호 테스터</h1>
+    </section>
 
 </body>
 
