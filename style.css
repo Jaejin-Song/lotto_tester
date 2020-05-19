@@ -113,7 +113,12 @@ body {
     font-size: 1.5rem;
 }
 
-#allnumlist {}
+
+/*git-number.html*/
+
+.section-givenum {
+    background-color: gray;
+}
 
 
 /* 645 ball */
