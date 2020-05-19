@@ -48,24 +48,26 @@
 
     <div class="container section-givenum" id="container-head">
         <div class="row">
-            <div class="col" style="background-color: black">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Action
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </div>
+            <div class="col-3" style="background-color: black">
+                <button type="button" class="btn btn-primary" id="generator">로또번호 생성</button>
             </div>
-            <div class="col">
-                <div class="row" style="background-color: blue;">개발중인 메뉴입니다</div>
-                <div class="row" style="background-color: blueviolet;">개발중인 메뉴입니다</div>
+            <div class="col-9">
+                <div class="row" style="background-color: blue;">
+                    <span id="demo"></span>
+                </div>
+                <div class="row" style="background-color: blueviolet;">
+                    <span id="demo"></span>
+                </div>
             </div>
         </div>
     </div>
+
+    <script>
+        $("#generator").click(function(event) {
+            document.getElementById("demo").innerHTML =
+                Math.floor(Math.random() * 45) + 1;
+        });
+    </script>
 
 </body>
 
