@@ -46,10 +46,30 @@
         </div>
     </nav>
 
+    <div class="banner-down">
+        <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-tolp1u0uqzc5" data-ad-width="320" data-ad-height="100"></ins>
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
+
     <div class="container section2" id="area2"></div>
 
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <div class="addthis_inline_share_toolbox"></div>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link disabled" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="lotto-number-3.html">2</a></li>
+            <li class="page-item"><a class="page-link" href="lotto-number-2.html">3</a></li>
+            <li class="page-item"><a class="page-link" href="lotto-number-1.html">4</a></li>
+            <li class="page-item">
+                <a class="page-link" href="lotto-number-3.html">Next</a>
+            </li>
+        </ul>
+    </nav>
 
     <script>
         $(document).ready(function() {
@@ -61,7 +81,7 @@
             tag += "<td>보너스번호</td>";
             tag += "</tr>";
 
-            for (var j = 911; j > 0; j--) {
+            for (var j = 911; j > 900; j--) {
                 var round_num = lotto_number[j].split(" ");
                 tag += "<tr>";
                 tag += "<td>" + j + "</td>";

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 테스터</title>
+
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5eb9811538b2718a"></script>
+
+    <!--jquery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!--bootstrap js-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!--font-->
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap" rel="stylesheet">
+    <!--javascript-->
+    <script src="common.js"></script>
+    <!--style.css-->
+    <link rel="stylesheet" href="style.css">
+    <!--favicon-->
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon.ico">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light container">
+        <a class="navbar-brand" href="index.html"> Lotto Tester</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#">역대 당첨번호 조회</a>
+                <a class="nav-item nav-link" href="give-number.html">로또번호 추천</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="banner-down">
+        <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-tolp1u0uqzc5" data-ad-width="320" data-ad-height="100"></ins>
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
+
+    <div class="container section2" id="area2"></div>
+
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <div class="addthis_inline_share_toolbox"></div>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link" href="lotto-number-4.html" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="lotto-number-4.html">1</a></li>
+            <li class="page-item active"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="lotto-number-2.html">3</a></li>
+            <li class="page-item"><a class="page-link" href="lotto-number-1.html">4</a></li>
+            <li class="page-item">
+                <a class="page-link" href="lotto-number-1.html">Next</a>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+        $(document).ready(function() {
+            var tag = "<table class='table table-bordered'>";
+
+            tag += "<tr id='allnumtitle'>";
+            tag += "<td>회차</td>";
+            tag += "<td>당첨번호</td>";
+            tag += "<td>보너스번호</td>";
+            tag += "</tr>";
+
+            for (var j = 900; j > 600; j--) {
+                var round_num = lotto_number[j].split(" ");
+                tag += "<tr>";
+                tag += "<td>" + j + "</td>";
+                tag += "<td>";
+                for (var h = 0; h < 6; h++) {
+                    tag += "<span>" + round_num[h] + "</span>";
+
+                    if (h < 5) tag += ", ";
+                }
+                tag += "</td>";
+                tag += "<td>" + round_num[6] + "</td>";
+                tag += "</tr>";
+            }
+            tag += "</table>";
+            area2.innerHTML = tag;
+        });
+        mainfornumber();
+    </script>
+
+</body>
+
+</html>
