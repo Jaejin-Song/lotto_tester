@@ -16,6 +16,7 @@ p {
 
 .footer {
     margin-top: 2%;
+    margin-bottom: 1%;
 }
 
 table,
@@ -106,7 +107,7 @@ body {
 }
 
 .addthis_inline_share_toolbox {
-    margin-top: 1%;
+    margin-top: 3%;
 }
 
 .banner-down {
@@ -124,6 +125,8 @@ body {
 
 .pagination {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 #lotto-number-addthis {
