@@ -14,6 +14,10 @@ p {
     margin-top: 11%;
 }
 
+.footer {
+    margin-top: 2%;
+}
+
 table,
 th,
 td {
@@ -82,10 +86,9 @@ body {
     font-family: "Recipekorea";
     font-size: 1.1rem;
     text-align: center;
-    margin-bottom: 3%;
 }
 
-.btn {
+#myBtn {
     margin-top: 1%;
 }
 
@@ -131,7 +134,7 @@ body {
 /*git-number.html*/
 
 .section-givenum {
-    background-color: gray;
+    background-color: aliceblue;
 }
 
 
@@ -244,6 +247,9 @@ body {
     }
     .ball_645.ball4 {
         margin-left: 10px;
+    }
+    .section-givenum {
+        flex-direction: column;
     }
 }
 

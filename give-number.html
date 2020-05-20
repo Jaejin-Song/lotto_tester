@@ -46,26 +46,85 @@
         </div>
     </nav>
 
-    <div class="container section-givenum" id="container-head">
-        <div class="row">
-            <div class="col-3" style="background-color: black">
-                <button type="button" class="btn btn-primary" id="generator">로또번호 생성</button>
+    <div class="justify-content-center d-flex p-2 bd-highlight container align-items-center section-givenum" id="container-head">
+        <div class="d-flex align-items-center bd-highlight justify-content-center" style="background-color: black">
+            <div class="p-2 bd-highlight">
+                <button type="button" class="btn btn-primary align-middle" id="generator">로또번호 생성</button>
             </div>
-            <div class="col-9">
-                <div class="row" style="background-color: blue;">
-                    <span id="demo"></span>
-                </div>
-                <div class="row" style="background-color: blueviolet;">
-                    <span id="demo"></span>
-                </div>
+        </div>
+        <div class="p-2 bd-highlight">
+            <div class="p-2 bd-highlight" style="background-color: black;">
+                <span id="demo00" class="ball_645 lrg ball1"></span>
+                <span id="demo01" class="ball_645 lrg ball2"></span>
+                <span id="demo02" class="ball_645 lrg ball2"></span>
+                <span id="demo03" class="ball_645 lrg ball3"></span>
+                <span id="demo04" class="ball_645 lrg ball4"></span>
+                <span id="demo05" class="ball_645 lrg ball4"></span>
+            </div>
+            <div class="p-2 bd-highlight" style="background-color: blue;">
+                <span id="demo10" class="ball_645 lrg ball1"></span>
+                <span id="demo11" class="ball_645 lrg ball2"></span>
+                <span id="demo12" class="ball_645 lrg ball2"></span>
+                <span id="demo13" class="ball_645 lrg ball3"></span>
+                <span id="demo14" class="ball_645 lrg ball4"></span>
+                <span id="demo15" class="ball_645 lrg ball4"></span>
+            </div>
+            <div class="p-2 bd-highlight" style="background-color: black;">
+                <span id="demo20" class="ball_645 lrg ball1"></span>
+                <span id="demo21" class="ball_645 lrg ball2"></span>
+                <span id="demo22" class="ball_645 lrg ball2"></span>
+                <span id="demo23" class="ball_645 lrg ball3"></span>
+                <span id="demo24" class="ball_645 lrg ball4"></span>
+                <span id="demo25" class="ball_645 lrg ball4"></span>
+            </div>
+            <div class="p-2 bd-highlight" style="background-color: blue;">
+                <span id="demo30" class="ball_645 lrg ball1"></span>
+                <span id="demo31" class="ball_645 lrg ball2"></span>
+                <span id="demo32" class="ball_645 lrg ball2"></span>
+                <span id="demo33" class="ball_645 lrg ball3"></span>
+                <span id="demo34" class="ball_645 lrg ball4"></span>
+                <span id="demo35" class="ball_645 lrg ball4"></span>
+            </div>
+            <div class="p-2 bd-highlight" style="background-color: black;">
+                <span id="demo40" class="ball_645 lrg ball1"></span>
+                <span id="demo41" class="ball_645 lrg ball2"></span>
+                <span id="demo42" class="ball_645 lrg ball2"></span>
+                <span id="demo43" class="ball_645 lrg ball3"></span>
+                <span id="demo44" class="ball_645 lrg ball4"></span>
+                <span id="demo45" class="ball_645 lrg ball4"></span>
             </div>
         </div>
     </div>
 
+    <footer class="footer d-flex container justify-content-center">
+        <p>ⓒ 2020. luka25 All rights reserved.</p>
+    </footer>
+
     <script>
         $("#generator").click(function(event) {
-            document.getElementById("demo").innerHTML =
-                Math.floor(Math.random() * 45) + 1;
+            var give = new Object();
+
+            for (var q = 0; q < 5; q++) {
+                var key = q;
+
+                var arr = [];
+                var a;
+                while (arr.length < 6) {
+                    a = Math.floor(Math.random() * 45) + 1;
+                    if (arr.includes(a) == false) arr.push(a);
+                }
+                arr.sort(function(a, b) {
+                    return a - b;
+                });
+
+                give[key] = arr;
+            }
+
+            for (var q = 0; q < 5; q++) {
+                for (var c = 0; c < 6; c++) {
+                    document.getElementById("demo" + q + c).innerHTML = give[q][c];
+                }
+            }
         });
     </script>
 
