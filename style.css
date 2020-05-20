@@ -135,6 +135,7 @@ body {
 
 .section-givenum {
     background-color: aliceblue;
+    margin-top: 4%;
 }
 
 .between-content {
@@ -163,11 +164,11 @@ body {
 }
 
 .ball_645.lrg {
-    width: 4rem;
-    height: 4rem;
-    line-height: 70px;
-    font-size: 28px;
-    padding-right: 0.2%;
+    width: 3.8rem;
+    height: 3.8rem;
+    line-height: 67px;
+    font-size: 26px;
+    padding-right: 0;
 }
 
 .ball_645.sml {
@@ -225,10 +226,10 @@ body {
         font-size: 1.025rem;
     }
     .ball_645.lrg {
-        width: 45px;
-        height: 45px;
-        line-height: 51px;
-        font-size: 22px;
+        width: 3.4rem;
+        height: 3.4rem;
+        line-height: 49px;
+        font-size: 20px;
     }
 }
 
@@ -237,10 +238,10 @@ body {
 
 @media screen and (max-width: 768px) {
     .ball_645.lrg {
-        width: 3rem;
-        height: 3rem;
-        line-height: 45px;
-        font-size: 18px;
+        width: 2.4rem;
+        height: 2.4rem;
+        line-height: 36px;
+        font-size: 16px;
     }
     .justify-content-between {
         width: 7%;
