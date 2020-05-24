@@ -10,6 +10,15 @@ p {
     font-size: 0.825rem;
 }
 
+a {
+    color: #ffffff;
+}
+
+a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
 #container-head {
     margin-top: 11%;
 }
