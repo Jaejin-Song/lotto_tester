@@ -1,7 +1,7 @@
 function findnumber(innum) {
     var arr = []; //일치하는 수자 걔수
     var arr_var = []; //회차
-    for (var j = 1; j < 912; j++) {
+    for (var j = 1; j < recent + 1; j++) {
         a = 0;
         var arr_name = lotto_number[j].split(" ");
         for (var i = 0; i < 6; i++) {
@@ -75,7 +75,9 @@ function invalid(arr) {
     return a;
 }
 
-var lotto_number = new Array(911);
+var recent = 912;
+var lotto_number = new Array(recent);
+lotto_number[912] = "5 8 18 21 22 38 10";
 lotto_number[911] = "4 5 12 14 32 42 35";
 lotto_number[910] = "1 11 17 27 35 39 31";
 lotto_number[909] = "7 24 29 30 34 35 33";
