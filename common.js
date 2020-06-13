@@ -75,8 +75,11 @@ function invalid(arr) {
     return a;
 }
 
-var recent = 912;
+var recent = 915;
 var lotto_number = new Array(recent);
+lotto_number[915] = "2 6 11 13 22 37 14";
+lotto_number[914] = "16 19 24 33 42 44 27";
+lotto_number[913] = "6 14 16 21 27 37 40";
 lotto_number[912] = "5 8 18 21 22 38 10";
 lotto_number[911] = "4 5 12 14 32 42 35";
 lotto_number[910] = "1 11 17 27 35 39 31";
